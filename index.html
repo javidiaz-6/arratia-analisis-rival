@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Análisis rival · CD Arratia · Osasuna Femenino B</title>
+  <meta name="description" content="Análisis rival del CD Arratia Femenino · CA Osasuna Femenino B · J9 Segunda Federación Femenina 2026/27.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="mode-staff">
+  <a class="skip" href="#main">Saltar al contenido</a>
+
+  <!-- ========== BARRA SUPERIOR ========== -->
+  <header class="topbar" role="banner">
+    <div class="topbar__brand">
+      <span class="topbar__comp">SEGUNDA RFEF</span>
+      <span class="topbar__sep" aria-hidden="true"></span>
+      <span class="topbar__title">Análisis rival · <strong>CD Arratia</strong> · J9</span>
+    </div>
+    <div class="topbar__actions">
+      <div class="seg" role="group" aria-label="Densidad de información">
+        <button type="button" class="seg__btn is-on" data-mode="staff" aria-pressed="true">Staff</button>
+        <button type="button" class="seg__btn" data-mode="players" aria-pressed="false">Jugadoras</button>
+      </div>
+      <button type="button" class="btn btn--primary" id="presentBtn" aria-label="Activar modo presentación">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M3 4h18v12H3zM2 18h20v2H2zm7-11v6l5-3z"/></svg>
+        <span>Presentación</span>
+      </button>
+      <span class="topbar__club">OSASUNA FEMENINO B</span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <!-- ========== NAVEGACIÓN ========== -->
+    <nav class="sidenav" aria-label="Secciones del informe">
+      <ol class="sidenav__list" id="navList"></ol>
+      <div class="sidenav__foot" id="navFoot"></div>
+    </nav>
+
+    <main id="main" class="main" tabindex="-1">
+      <!-- 01 RESUMEN -->
+      <section class="section section--hero" id="resumen" data-title="Resumen" aria-labelledby="h-resumen">
+        <h2 id="h-resumen" class="sr-only">Resumen</h2>
+        <div id="heroMount"></div>
+      </section>
+
+      <!-- 02 CLASIFICACIÓN -->
+      <section class="section" id="clasificacion" data-title="Clasificación" aria-labelledby="h-clasificacion">
+        <div class="sec-head" data-num="02"><h2 id="h-clasificacion">Clasificación</h2></div>
+        <div id="standingsMount"></div>
+      </section>
+
+      <!-- 03 RACHA -->
+      <section class="section" id="racha" data-title="Racha" aria-labelledby="h-racha">
+        <div class="sec-head" data-num="03"><h2 id="h-racha">Racha</h2></div>
+        <div id="formMount"></div>
+      </section>
+
+      <!-- 04 RENDIMIENTO -->
+      <section class="section" id="rendimiento" data-title="Rendimiento" aria-labelledby="h-rendimiento">
+        <div class="sec-head" data-num="04"><h2 id="h-rendimiento">Rendimiento</h2></div>
+        <div id="perfMount"></div>
+      </section>
+
+      <!-- 05 PLANTILLA -->
+      <section class="section" id="plantilla" data-title="Plantilla" aria-labelledby="h-plantilla">
+        <div class="sec-head" data-num="05"><h2 id="h-plantilla">Plantilla</h2></div>
+        <div id="squadMount"></div>
+      </section>
+
+      <!-- 06 XI -->
+      <section class="section" id="xi" data-title="XI J8" aria-labelledby="h-xi">
+        <div class="sec-head" data-num="06"><h2 id="h-xi">XI ante Celta · J8</h2></div>
+        <div id="lineupMount"></div>
+      </section>
+
+      <!-- 07 JUGADORAS -->
+      <section class="section" id="jugadoras" data-title="Jugadoras" aria-labelledby="h-jugadoras">
+        <div class="sec-head" data-num="07"><h2 id="h-jugadoras">Jugadoras a destacar</h2></div>
+        <div id="keyMount"></div>
+      </section>
+
+      <!-- 08–11 FASES TÁCTICAS (generadas desde data.js) -->
+      <section class="section section--phase" id="con-balon" data-title="Con balón" aria-labelledby="h-con-balon">
+        <div class="sec-head" data-num="08"><h2 id="h-con-balon">Con balón</h2></div>
+        <div class="phase-mount" data-phase="con-balon"></div>
+      </section>
+      <section class="section section--phase" id="sin-balon" data-title="Sin balón" aria-labelledby="h-sin-balon">
+        <div class="sec-head" data-num="09"><h2 id="h-sin-balon">Sin balón</h2></div>
+        <div class="phase-mount" data-phase="sin-balon"></div>
+      </section>
+      <section class="section section--phase" id="transiciones" data-title="Transiciones" aria-labelledby="h-transiciones">
+        <div class="sec-head" data-num="10"><h2 id="h-transiciones">Transiciones</h2></div>
+        <div class="phase-mount" data-phase="transiciones"></div>
+      </section>
+      <section class="section section--phase" id="abp" data-title="ABP" aria-labelledby="h-abp">
+        <div class="sec-head" data-num="11"><h2 id="h-abp">Balón parado</h2></div>
+        <div class="phase-mount" data-phase="abp"></div>
+      </section>
+
+      <footer class="footer" id="footerMount"></footer>
+    </main>
+  </div>
+
+  <!-- ========== DRAWER JUGADORA ========== -->
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" hidden>
+    <button type="button" class="drawer__close" id="drawerClose" aria-label="Cerrar ficha">✕</button>
+    <div id="drawerBody"></div>
+  </aside>
+
+  <!-- ========== BARRA MODO PRESENTACIÓN ========== -->
+  <div class="presentbar" id="presentBar" hidden>
+    <button type="button" class="btn" id="presPrev" aria-label="Diapositiva anterior">← Anterior</button>
+    <span class="presentbar__label" id="presLabel" aria-live="polite"></span>
+    <button type="button" class="btn btn--primary" id="presNext" aria-label="Diapositiva siguiente">Siguiente →</button>
+    <button type="button" class="btn btn--ghost" id="presExit" aria-label="Salir del modo presentación">Salir ✕</button>
+  </div>
+
+  <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
+
+  <!-- Datos primero, luego la lógica (funciona abriendo el archivo directamente) -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
